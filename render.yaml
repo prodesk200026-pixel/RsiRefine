@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: bharati-simple-rsi-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DHAN_CLIENT_ID
+        sync: false
+      - key: DHAN_PIN
+        sync: false
+      - key: DHAN_TOTP_SECRET
+        sync: false
+      - key: DHAN_ACCESS_TOKEN
+        sync: false
+      - key: DEFAULT_INDEX
+        value: NIFTY
